@@ -13,6 +13,14 @@ var tests = []testpair{
 	{[]float64{-1, 1}, 0},
 }
 
+func Average(xs []float64) float64 {
+	total := 0.0
+	for _, v := range xs {
+		total += v
+	}
+	return total / float64(len(xs))
+}
+
 func TestAverage(t *testing.T) {
 	for _, pair := range tests {
 		v := Average(pair.values)
